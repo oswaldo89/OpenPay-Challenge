@@ -10,5 +10,7 @@
     <color name="op_primary">#004481</color>
     <color name="op_primaryDark">#06345E</color>
     <color name="op_gray_light">#D1D1D1</color>
+    <color name="op_bg_round_icon">#E9EAEE</color>
+    <color name="op_bg_icon">#0C2046</color>
 
 </resources>

@@ -9,4 +9,15 @@
         <item name="colorOnSecondary">@color/black</item>
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
     </style>
+
+    <!-- Estilo para el ImageView -->
+    <style name="RoundedIcon">
+        <item name="android:background">@drawable/background_round</item>
+        <item name="android:layout_width">@dimen/rounded_icon</item>
+        <item name="android:layout_height">@dimen/rounded_icon</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:padding">@dimen/small_150</item>
+        <item name="android:tint">@color/op_bg_icon</item>
+    </style>
+
 </resources>

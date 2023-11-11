@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.profile.ProfileFragment">
 
-
     <View
         android:layout_width="wrap_content"
         android:layout_height="0dp"
@@ -93,6 +92,94 @@
                 app:layout_constraintEnd_toEndOf="@+id/tvName"
                 app:layout_constraintStart_toStartOf="@+id/tvName"
                 app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/normal_100"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/glCenterProfile"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/glSuccess"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent=".5" />
+
+                <ImageView
+                    android:id="@+id/iconSuccess"
+                    style="@style/RoundedIcon"
+                    android:src="@drawable/ic_success"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:paddingStart="@dimen/small_50"
+                    android:text="94%"
+                    app:layout_constraintBottom_toTopOf="@+id/glSuccess"
+                    app:layout_constraintStart_toEndOf="@+id/iconSuccess"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
+                    android:paddingStart="@dimen/small_50"
+                    android:text="Job Success"
+                    app:layout_constraintStart_toEndOf="@+id/iconSuccess"
+                    app:layout_constraintTop_toBottomOf="@+id/glSuccess" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/normal_100"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/glCenterProfile">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/glRating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent=".5" />
+
+                <ImageView
+                    android:id="@+id/iconRating"
+                    style="@style/RoundedIcon"
+                    android:src="@drawable/ic_rating"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:paddingStart="@dimen/small_50"
+                    android:text="4.8%"
+                    app:layout_constraintBottom_toTopOf="@+id/glRating"
+                    app:layout_constraintStart_toEndOf="@+id/iconRating"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
+                    android:paddingStart="@dimen/small_50"
+                    android:text="Star Rating"
+                    app:layout_constraintStart_toEndOf="@+id/iconRating"
+                    app:layout_constraintTop_toBottomOf="@+id/glRating" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

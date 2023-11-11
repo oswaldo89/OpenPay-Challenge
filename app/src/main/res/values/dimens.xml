@@ -6,6 +6,7 @@
 
     <dimen name="small_50">4dp</dimen>
     <dimen name="small_100">8dp</dimen>
+    <dimen name="small_150">10dp</dimen>
 
     <dimen name="normal_100">16dp</dimen>
     <dimen name="normal_125">20dp</dimen>
@@ -36,6 +37,7 @@
     <dimen name="text_normal_3">19sp</dimen>
 
     <dimen name="profile_image_radius">10dp</dimen>
+    <dimen name="rounded_icon">50dp</dimen>
 
 </resources>
 
