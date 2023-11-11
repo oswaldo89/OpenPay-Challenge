@@ -27,14 +27,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent=".45" />
+        app:layout_constraintGuide_percent=".44" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardProfile"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="@dimen/normal_100"
-        android:layout_marginTop="@dimen/normal_175"
+        android:layout_marginTop="@dimen/small_150"
         android:layout_marginEnd="@dimen/normal_100"
         app:cardCornerRadius="8dp"
         app:cardElevation="4dp"
