@@ -1,5 +1,6 @@
 package com.oswaldo.openpay.ui.movies.presentation
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,6 +9,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.oswaldo.openpay.databinding.FragmentMoviesBinding
+import com.oswaldo.openpay.ui.detail.DetailActivity
+import com.oswaldo.openpay.ui.detail.DetailActivity.Companion.EXTRA_MOVIE
 import com.oswaldo.openpay.ui.movies.domain.model.Movie
 import com.oswaldo.openpay.ui.movies.presentation.adapters.IMovieEvent
 import com.oswaldo.openpay.ui.movies.presentation.adapters.MovieListAdapter
@@ -79,7 +82,9 @@ class MoviesFragment : Fragment(), IMovieEvent {
     }
 
     override fun onClickMovie(movie: Movie) {
-
+        val intent = Intent(requireActivity(), DetailActivity::class.java)
+        intent.putExtra(EXTRA_MOVIE, movie)
+        requireActivity().startActivity(intent)
     }
 
 }

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.detail.DetailActivity">
+
+    <ImageView
+        android:id="@+id/posterImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:importantForAccessibility="no"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_detail_gradient"
+        app:layout_constraintBottom_toBottomOf="@+id/posterImage"
+        app:layout_constraintEnd_toEndOf="@+id/posterImage"
+        app:layout_constraintStart_toStartOf="@+id/posterImage"
+        app:layout_constraintTop_toTopOf="@+id/posterImage" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".55" />
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/glContent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/normal_200">
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/TitleDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingStart="@dimen/normal_200"
+                android:paddingEnd="@dimen/normal_200"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Her" />
+
+            <LinearLayout
+                android:id="@+id/dataMovie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/title">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/year"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:clickable="false"
+                    android:text="2013" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/language"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:clickable="false"
+                    android:text="en"
+                    android:textAllCaps="false" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/average"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:backgroundTint="@color/op_primary"
+                    android:clickable="false"
+                    android:drawableStart="@drawable/ic_rating"
+                    android:drawableTint="@color/white"
+                    android:text="8.0"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnTrailer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/normal_200"
+                android:layout_marginTop="@dimen/normal_100"
+                android:layout_marginEnd="@dimen/normal_200"
+                android:background="@drawable/bg_btn_trailer"
+                android:fontFamily="@font/roboto"
+                android:foreground="?selectableItemBackgroundBorderless"
+                android:gravity="center"
+                android:text="Ver Trailer"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dataMovie" />
+
+            <TextView
+                android:id="@+id/moviePlot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/normal_200"
+                android:layout_marginTop="@dimen/normal_100"
+                android:fontFamily="@font/roboto"
+                android:text="MOVIE PLOT"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_small_1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnTrailer" />
+
+            <TextView
+                android:id="@+id/overview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/normal_200"
+                android:layout_marginEnd="@dimen/normal_200"
+                android:fontFamily="@font/roboto"
+                android:paddingStart="@dimen/normal_200"
+                android:paddingEnd="@dimen/normal_200"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_small_1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/moviePlot"
+                tools:text="In a near future, a lonely writer develops an unlikely relationship with an operating system designed to meet his every need." />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

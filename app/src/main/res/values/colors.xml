@@ -13,4 +13,10 @@
     <color name="op_bg_round_icon">#E9EAEE</color>
     <color name="op_bg_icon">#0C2046</color>
 
+    <!-- app colors -->
+    <!-- alpha percentages to hex > https://stackoverflow.com/a/17239853 -->
+    <color name="redAlpha20Color">#33FF0000</color>
+    <color name="blackAlpha90Color">#E6000000</color>
+    <color name="blackAlpha20Color">#33000000</color>
+
 </resources>
