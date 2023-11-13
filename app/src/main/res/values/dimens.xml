@@ -39,5 +39,8 @@
     <dimen name="profile_image_radius">10dp</dimen>
     <dimen name="rounded_icon">50dp</dimen>
 
+    <dimen name="movie_thumb_width">138dp</dimen>
+    <dimen name="movie_thumb_height">190dp</dimen>
+
 </resources>
 

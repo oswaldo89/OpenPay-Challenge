@@ -5,9 +5,12 @@ import retrofit2.http.GET
 
 
 interface MoviesRemoteDataSource {
-    @GET("movie/upcoming")
-    suspend fun getUpcomingMovies(): DataMovies
+    @GET("movie/popular")
+    suspend fun getPopularMovies(): DataMovies
 
     @GET("movie/top_rated")
     suspend fun getTopRatedMovies(): DataMovies
+
+    @GET("movie/upcoming")
+    suspend fun getUpcomingMovies(): DataMovies
 }

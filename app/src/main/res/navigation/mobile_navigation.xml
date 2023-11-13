@@ -13,7 +13,7 @@
 
     <fragment
         android:id="@+id/navigation_movies"
-        android:name="com.oswaldo.openpay.ui.movies.MoviesFragment"
+        android:name="com.oswaldo.openpay.ui.movies.presentation.MoviesFragment"
         android:label="@string/title_movies"
         tools:layout="@layout/fragment_movies" />
 
