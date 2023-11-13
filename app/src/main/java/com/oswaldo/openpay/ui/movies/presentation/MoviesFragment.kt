@@ -78,11 +78,6 @@ class MoviesFragment : Fragment(), IMovieEvent {
         }
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
-
     override fun onClickMovie(movie: Movie) {
 
     }
