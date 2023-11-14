@@ -16,11 +16,17 @@ import com.google.android.gms.location.LocationCallback
 import com.google.android.gms.location.LocationRequest
 import com.google.android.gms.location.LocationResult
 import com.google.android.gms.location.LocationServices
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.MapView
+import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 import com.oswaldo.openpay.databinding.FragmentLocationBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class LocationFragment : Fragment() {
+class LocationFragment : Fragment(), OnMapReadyCallback {
 
     private var _binding: FragmentLocationBinding? = null
     private val binding get() = _binding!!
@@ -35,6 +41,9 @@ class LocationFragment : Fragment() {
         priority = LocationRequest.PRIORITY_HIGH_ACCURACY
     }
 
+    private lateinit var mapView: MapView
+    private var googleMap: GoogleMap? = null
+
     private val requestPermissionLauncher = registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted: Boolean ->
         if (isGranted) {
             startLocationUpdates()
@@ -44,17 +53,51 @@ class LocationFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentLocationBinding.inflate(inflater, container, false)
 
+        setupLocationListener()
+
+        mapView = binding.mapView
+        mapView.onCreate(savedInstanceState)
+        mapView.getMapAsync(this@LocationFragment)
+
+        viewModel.getLocations()
+
+        return binding.root
+    }
+
+    override fun onMapReady(map: GoogleMap) {
+        googleMap = map
+
+        viewModel.locationsLiveData.observe(viewLifecycleOwner) { locations ->
+            googleMap?.clear()
+
+            locations?.forEach { location ->
+                val latLng = LatLng(location.latitud, location.longitud)
+                googleMap?.addMarker(MarkerOptions().position(latLng).title("location"))
+            }
+
+            // center zoom in marker -> if exist locations saved
+            locations?.lastOrNull()?.let { lastLocation ->
+                val latLng = LatLng(lastLocation.latitud, lastLocation.longitud)
+                val cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng, 10f)
+                googleMap?.moveCamera(cameraUpdate)
+            }
+        }
+    }
+
+
+    private fun setupLocationListener() {
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireActivity())
         locationCallback = object : LocationCallback() {
             override fun onLocationResult(locationResult: LocationResult) {
                 locationResult.lastLocation.let { location ->
-                    viewModel.save(location.latitude, location.longitude, System.currentTimeMillis())
+                    location?.let {
+                        viewModel.saveLocation(it.latitude, it.longitude, System.currentTimeMillis())
+                    }
                 }
             }
         }
 
         startLocationUpdates()
-        return binding.root
     }
 
     private fun startLocationUpdates() {
@@ -64,5 +107,6 @@ class LocationFragment : Fragment() {
             requestPermissionLauncher.launch(Manifest.permission.ACCESS_FINE_LOCATION)
         }
     }
+
 
 }

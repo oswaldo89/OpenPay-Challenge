@@ -20,6 +20,11 @@
         android:theme="@style/Theme.OpenPay"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAUcHBGdH9Q_OFl5SLWIqleYeMdnysKuNE" />
+
         <activity
             android:name=".ui.detail.DetailActivity"
             android:exported="false" />

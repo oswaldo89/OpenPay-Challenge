@@ -74,10 +74,13 @@ dependencies {
 
     //firebase
     implementation(platform("com.google.firebase:firebase-bom:32.5.0"))
-    implementation("com.google.firebase:firebase-firestore:24.0.0")
+    implementation("com.google.firebase:firebase-firestore:24.9.1")
 
     //location
-    implementation("com.google.android.gms:play-services-location:18.0.0")
+    implementation("com.google.android.gms:play-services-location:21.0.1")
+
+    //map
+    implementation("com.google.android.gms:play-services-maps:18.2.0")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
