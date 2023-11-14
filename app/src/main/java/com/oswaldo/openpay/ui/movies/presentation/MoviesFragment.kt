@@ -58,16 +58,7 @@ class MoviesFragment : Fragment(), IMovieEvent {
         }
     }
 
-    private fun observeNavigation() {
-        /*viewModel.navigationLiveData.observe(
-            requireActivity(),
-            OneTimeEventObserver {
-                when (it) {
-                    is MoviesViewModel.Navigation.ChipValue -> setChipValue(it.type, it.value)
-                }
-            }
-        )*/
-    }
+    private fun observeNavigation() { }
 
     private fun showData(popularMovies: List<Movie>, topRelatedMovies: List<Movie>, upcomingMovies: List<Movie>) {
         binding.apply {
