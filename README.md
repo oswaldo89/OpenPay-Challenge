@@ -12,3 +12,9 @@
 • Uso de [Styles](https://github.com/oswaldo89/openpay/blob/main/app/src/main/res/values/themes.xml)  ✅  
 • Uso de [dimens](https://github.com/oswaldo89/openpay/blob/main/app/src/main/res/values/dimens.xml) ✅  
 • Uso de FragmentDialog con UI amigable para la notificación de casos de excepción. ❌ 
+
+
+| Profile | Movies | Detail | Maps |
+|---------|--------|--------|------|
+| ![Profile](https://github.com/oswaldo89/openpay/assets/5890993/433d70b6-0d56-4e77-8d52-2eee2b6e21ec) | ![Movies](https://github.com/oswaldo89/openpay/assets/5890993/e85e87c3-3743-484d-a6f7-d70e72545739) | ![Detail](https://github.com/oswaldo89/openpay/assets/5890993/fb6dc3db-02b6-44b6-843f-434a9aeb6909) | ![Maps](https://github.com/oswaldo89/openpay/assets/5890993/f7ea3f99-1a07-4da8-9cc1-0da6c7c61f41) |
+
